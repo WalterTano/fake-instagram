@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Post } from 'src/app/Interfaces/Post';
-import { User } from 'src/app/Interfaces/User';
-import { ProfileService } from 'src/app/Service/profile.service';
+import { Post } from 'src/app/interfaces/Post';
+import { User } from 'src/app/interfaces/User';
+import { ProfileService } from 'src/app/services/profile.service';
 
 @Component({
   selector: 'app-photo-profile-grid',
@@ -9,7 +9,7 @@ import { ProfileService } from 'src/app/Service/profile.service';
   styleUrls: ['./photo-profile-grid.component.scss']
 })
 export class PhotoProfileGridComponent implements OnInit {
-  
+
   @Input() user!: User;
   posts: Post[] = [];
 

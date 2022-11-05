@@ -1,8 +1,9 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { ImageService } from 'src/app/Service/image.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ImageService } from 'src/app/services/image.service';
 import { ChatMessageVuewComponent } from './chat-message-vuew/chat-message-vuew.component';
 
-import { User } from 'src/app/Interfaces/User';
+import { User } from 'src/app/interfaces/User';
+import { Post } from 'src/app/interfaces/Post';
 
 @Component({
   selector: 'app-chats-preview',
@@ -18,10 +19,10 @@ export class ChatsPreviewComponent implements OnInit {
   constructor(private imageService: ImageService) { }
 
   ngOnInit(): void {
-    this.imageService.getArrayOfImgs()
-    .subscribe(posts => {
-      for(let post of posts){
-        this.users.push(post.user);
+    this.imageService.getImages()
+    .subscribe((posts: Post[]) => {
+      for(const { user } of posts){
+        this.users.push(user);
       }
     });
   }

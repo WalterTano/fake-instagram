@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { User } from 'src/app/Interfaces/User';
+import { User } from 'src/app/interfaces/User';
 
 @Component({
   selector: 'app-info-user',
@@ -7,7 +7,7 @@ import { User } from 'src/app/Interfaces/User';
   styleUrls: ['./info-user.component.scss']
 })
 export class InfoUserComponent implements OnInit {
-  
+
   @Input() user!: User;
   @Input() isDarkMode?: boolean;
 

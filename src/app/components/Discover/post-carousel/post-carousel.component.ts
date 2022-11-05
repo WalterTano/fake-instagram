@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import {NgbCarousel, NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
-import { Post } from 'src/app/Interfaces/Post';
+import { Post } from 'src/app/interfaces/Post';
 
 @Component({
   selector: 'app-post-carousel',
@@ -8,14 +8,14 @@ import { Post } from 'src/app/Interfaces/Post';
   styleUrls: ['./post-carousel.component.scss']
 })
 export class PostCarouselComponent implements OnInit {
-  
+
   @Input() posts!: Post[];
 
   swipeStartXPos?: number = undefined;
 
   // NGB Carousel reference and config
   @ViewChild('ngcarousel', { static: false }) ngCarousel!: NgbCarousel;
-  
+
   showNavigationArrows = false;
   showNavigationIndicators = false;
 
@@ -37,7 +37,7 @@ export class PostCarouselComponent implements OnInit {
 
     /*Obtiene la diferencia del punto donde el usurio empezo a tocar la pantalla, y donde dejo de tocarla*/
     const swipeFinalXPos = $event.changedTouches[0].clientX;
-    const xDifference = swipeFinalXPos - this.swipeStartXPos; 
+    const xDifference = swipeFinalXPos - this.swipeStartXPos;
 
     if (Math.abs(xDifference) > 70) { //Si la diferencia es mayor a 70 se mueve la imagen/slide
       if (xDifference < 0) { // Si la diferencia es negatica, se mueve a la derecha.
