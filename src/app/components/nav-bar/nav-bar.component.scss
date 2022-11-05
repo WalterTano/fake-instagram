@@ -1,12 +1,12 @@
 
 .desk{
-    
+    z-index: 2;
     position: fixed; //Especifica como un elemento es posicionado en el doucmento.
                     //fixed lo que hace es que posiciona al elemento teniendo en cuenta la pantalla que se esta viendo, como bloque contenedor.
-    
+
     bottom: 0%; //Con position fixed, bottom determina la distancia entre el borde inferior del elemento y el borde inferior de su bloque contenedor.
                 //0% = no hay distancia.
-    
+
     width: 100%;//Especifica el ancho del area de contendio del elemento. (es lo que esta dentro del margin, padding, etc).
                 //El percentaje es respecto al bloque que contiene el elemeto. (Seria el 100% de la anchura de dicho bloque).
 
@@ -14,9 +14,9 @@
 }
 
 .desk a{
-    
+
     padding: 0.3rem;  //establece el area de relleno del elemento. (la unidad "rem" signifixa que es relativo al tamaño del elemento raiz)
-    
+
     margin: 0.3rem; //establece el area de margen del elemento. (la unidad "rem" signifixa que es relativo al tamaño del elemento raiz)
 }
 

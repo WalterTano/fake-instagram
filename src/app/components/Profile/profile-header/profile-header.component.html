@@ -5,14 +5,14 @@
   <button class="fi-follow-button dark" (click)="updateFollowStatus()">{{followText}} {{user.name}}</button>
 </div>
 <div class="d-flex justify-content-center pt-3">
-  <a class="w-100" routerLink="/chat">
+  <a class="w-100" routerLink="/chats/{{user.username}}">
     <button class="fi-follow-button">Message</button>
   </a>
 </div>
 
 
 
-<!-- 
+<!--
 ------------------------------Clases------------------------------
 
 d-flex = Hace lo mismo que el "display: flex" del scss.

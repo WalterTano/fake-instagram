@@ -5,6 +5,7 @@ import { ChatMessageVuewComponent } from './chat-message-vuew/chat-message-vuew.
 import { User } from 'src/app/interfaces/User';
 import { Post } from 'src/app/interfaces/Post';
 import { PostResponse } from 'src/app/interfaces/PostResponse';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-chats-preview',
@@ -17,9 +18,12 @@ export class ChatsPreviewComponent implements OnInit {
 
   @ViewChild('hiddenElement') chat?: ChatMessageVuewComponent;
 
-  constructor(private imageService: PostService) { }
+  constructor(private imageService: PostService,
+              private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    const username = this.activatedRoute.snapshot.paramMap.get('username');
+
     this.imageService.getPosts(undefined, true)
     .subscribe((response: PostResponse) => {
       if (!response.success) {
@@ -28,6 +32,10 @@ export class ChatsPreviewComponent implements OnInit {
 
       for(const { user } of response.data){
         this.users.push(user);
+
+        if (user.username === username) {
+          this.openChat(user);
+        }
       }
     });
   }

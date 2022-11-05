@@ -11,6 +11,7 @@ const routes: Routes = [
   {path: 'uploadPhoto', component:UploadPageComponent},
   {path: 'discoverPage', component:DiscoverPageComponent},
   {path: 'chats', component: ChatsPreviewComponent},
+  {path: 'chats/:username', component: ChatsPreviewComponent},
   {path: 'profile', component: ProfilePageComponent},
   {path: 'search', component: SearchPageComponent},
   {path: 'profile/:username', component: ProfilePageComponent}
