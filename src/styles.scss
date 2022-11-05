@@ -1,37 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 .icon-cropper {
-    
+
     position: relative; //Especifica como un elemento esta posicionado en el documento.
                         //(relative esta dado para que ele lemento se posicone de acuerdo al flujo normal del documento
                         //y luego es desplazado en base a si mismo en los valores "top", "right", etc)
-    
+
     overflow: hidden; //Overflow especifica como tratar el contenido excedente a un elemento o bloque.
                         //hidder significa que lo oculta/es recortado.
-    
+
     border-radius: 50%; //Redondea las esquinas del borde exterior de un elemento.
 }
 
 .user-info-icon .icon-cropper  {
-    
+
     width: 2rem; //Especifica el ancho del area de contendio del elemento. (es lo que esta dentro del margin, padding, etc).
                 //(la unidad "rem" signifixa que es relativo al tamaño del elemento raiz)
-    
+
     height: 2rem; //Especifica la altura del area de contendio del elemento. (es lo que esta dentro del margin, padding, etc).
                 //(la unidad "rem" signifixa que es relativo al tamaño del elemento raiz)
 }
 
 .fi-subtitle {
     font-family: 'Roboto'; //Especifica una lista de fuentes o familia de fuentes para utilizar en el elemento.
-    
+
     font-weight: 900; //Establece el grueso de los caracteres, el 900 creo que seria mas grueso que bold.
-    
+
     font-size: 0.8rem; //Especifica el tamaño de la letra. (la unidad "rem" signifixa que es relativo al tamaño del elemento raiz)
-    
+
     line-height: 15px; //Se utiliza para establcer la distancia entre lineas de texto.
-    
+
     letter-spacing: 0.04em; //Estable el espacio horizontal entre los carcateres. (la unidad em significa que es relativo al tamaño de su propio elemento)
-    
+
     text-transform: uppercase; //Especifica el cambio entre mayusculas y minusculas del texto de un elemento.
 
     display: flex;
@@ -41,32 +42,32 @@
 
 .form-control {
     &.fi-style {
-        
+
         border-radius: 0ex; //Redondea las esquinas del borde exterior de un elemento.
                             //ex seria "la altura de la letra x en la fuente".
-        
-        font-family: 'sans-serif'; //Especifica una lista de fuentes o familia de fuentes para utilizar en el elemento.
-        
+
+        font-family: 'Roboto'; //Especifica una lista de fuentes o familia de fuentes para utilizar en el elemento.
+
         background: #FFFFFF; //Establece el fondo del elemento.
-        
+
         border: 2px solid #000000; //Permite definir reglas para el estilo del borde del elemento.
     }
 }
 
 .user-chat-icon .icon-cropper  {
-    
+
     width: 4rem; //Especifica el ancho del area de contendio del elemento. (es lo que esta dentro del margin, padding, etc).
                 //(la unidad "rem" signifixa que es relativo al tamaño del elemento raiz)
-    
+
     height: 4rem; //Especifica la altura del area de contendio del elemento. (es lo que esta dentro del margin, padding, etc).
                 //(la unidad "rem" signifixa que es relativo al tamaño del elemento raiz)
 }
 
 .user-profile-icon .icon-cropper {
-    
+
     width: 8rem; //Especifica el ancho del area de contendio del elemento. (es lo que esta dentro del margin, padding, etc).
                 //(la unidad "rem" signifixa que es relativo al tamaño del elemento raiz)
-    
+
     height: 8rem;//Especifica la altura del area de contendio del elemento. (es lo que esta dentro del margin, padding, etc).
                 //(la unidad "rem" signifixa que es relativo al tamaño del elemento raiz)
 }
@@ -85,11 +86,9 @@
 }
 
 .fi-text{
-    
-    font-family: 'SF Pro Text'; //Especifica una lista de fuentes o familia de fuentes para utilizar en el elemento.
 
     text-align: center; //Establece la aliniacion horizontal del contenido.
-    
+
     letter-spacing: -0.408px; //Estable el espacio horizontal entre los carcateres.
 }
 

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { User } from 'src/app/Interfaces/User';
+import { User } from 'src/app/interfaces/User';
 
 @Component({
   selector: 'app-user-icon',
@@ -9,7 +9,7 @@ import { User } from 'src/app/Interfaces/User';
 export class UserIconComponent implements OnInit {
 
   @Input() user?: User;
-  
+
   constructor() { }
 
   ngOnInit(): void {

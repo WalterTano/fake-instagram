@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { User } from 'src/app/Interfaces/User';
+import { User } from 'src/app/interfaces/User';
 
 @Component({
   selector: 'app-message-grid',

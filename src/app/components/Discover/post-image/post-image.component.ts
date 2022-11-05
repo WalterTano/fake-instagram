@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { PostImg } from 'src/app/Interfaces/PostImg';
-import { User } from 'src/app/Interfaces/User';
+import { PostImg } from 'src/app/interfaces/PostImg';
+import { User } from 'src/app/interfaces/User';
 import { FullSizeImageComponent } from '../../full-size-image/full-size-image.component';
 
 @Component({

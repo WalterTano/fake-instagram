@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Post } from 'src/app/Interfaces/Post';
-import { ImageService } from 'src/app/Service/image.service';
+
+import { Post } from 'src/app/interfaces/Post';
+import { ImageService } from 'src/app/services/image.service';
 
 @Component({
   selector: 'app-search-page',
@@ -9,7 +10,7 @@ import { ImageService } from 'src/app/Service/image.service';
 })
 export class SearchPageComponent implements OnInit {
 
-  searchresult: boolean = false;
+  hasSearchResult: boolean = false;
   title = 'Search';
 
   posts: Post[] = [];
@@ -17,16 +18,15 @@ export class SearchPageComponent implements OnInit {
   constructor(private discoverImgsService: ImageService) { }
 
   ngOnInit(): void {
-    this.searchresult = false;
+    this.hasSearchResult = false;
   }
-  
+
   getSearchedImg(searchinput: string): void {
-    this.searchresult = true;
-    if (searchinput == '') {
-      this.discoverImgsService.getArrayOfImgs().subscribe(posts => this.posts = posts);
-    } else {
-      this.discoverImgsService.getArrayOfSearchedImgs(searchinput).subscribe(posts => this.posts = posts);
-    }
+    this.hasSearchResult = true;
+    this.discoverImgsService.getImages(searchinput).subscribe((posts: Post[]) => {
+      this.posts = posts;
+      this.hasSearchResult = true;
+    });
   }
 
 }

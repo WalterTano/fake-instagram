@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Post } from '../Interfaces/Post';
+import { Post } from '../interfaces/Post';
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +12,11 @@ export class ImageService {
 
   private imgsUrl = 'api/posts';
 
-  getArrayOfImgs(): Observable<Post[]> {
-    return this.http.get<Post[]>(this.imgsUrl);
-  }
-  getArrayOfSearchedImgs(value: string): Observable<Post[]> {
-    return this.http.get<Post[]>(this.imgsUrl + `?tags=${value}`);
+  getImages(searchTerm?: string): Observable<Post[]> {
+    if (searchTerm) {
+      return this.http.get<Post[]>(this.imgsUrl + `?q=${searchTerm}`);
+    } else {
+      return this.http.get<Post[]>(this.imgsUrl);
+    }
   }
 }
