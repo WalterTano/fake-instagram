@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ImageService } from 'src/app/services/image.service';
+import { PostService } from 'src/app/services/post.service';
 import { ChatMessageVuewComponent } from './chat-message-vuew/chat-message-vuew.component';
 
 import { User } from 'src/app/interfaces/User';
 import { Post } from 'src/app/interfaces/Post';
+import { PostResponse } from 'src/app/interfaces/PostResponse';
 
 @Component({
   selector: 'app-chats-preview',
@@ -16,12 +17,16 @@ export class ChatsPreviewComponent implements OnInit {
 
   @ViewChild('hiddenElement') chat?: ChatMessageVuewComponent;
 
-  constructor(private imageService: ImageService) { }
+  constructor(private imageService: PostService) { }
 
   ngOnInit(): void {
-    this.imageService.getImages()
-    .subscribe((posts: Post[]) => {
-      for(const { user } of posts){
+    this.imageService.getPosts(undefined, true)
+    .subscribe((response: PostResponse) => {
+      if (!response.success) {
+        return;
+      }
+
+      for(const { user } of response.data){
         this.users.push(user);
       }
     });

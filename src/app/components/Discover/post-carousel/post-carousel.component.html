@@ -2,13 +2,13 @@
   <ng-template ngbSlide *ngFor="let post of posts">
     <div (touchstart)="captureSwipeStart($event)" (touchend)="swipePost($event)">
         <app-post-image [image]="post.postImg" [user]="post.user"></app-post-image>
-        <app-info-user [user]="post.user"></app-info-user>
+        <app-info-user *ngIf="post.user" [user]="post.user"></app-info-user>
     </div>
   </ng-template>
 </ngb-carousel>
 
 
-<!-- 
+<!--
 
   ------------------------------Atributos de componente interno------------------------------
 

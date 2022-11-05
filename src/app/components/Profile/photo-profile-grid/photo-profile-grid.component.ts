@@ -16,9 +16,11 @@ export class PhotoProfileGridComponent implements OnInit {
   constructor(private profileService: ProfileService) { }
 
   ngOnInit(): void {
-    this.profileService.getPostsByUserId(this.user.username)
-    .subscribe(posts => {
-      this.posts = posts;
+    this.profileService.getPostsByUserId(this.user._id)
+    .subscribe(response => {
+      if (response.success) {
+        this.posts = response.data;
+      }
     });
   }
 
