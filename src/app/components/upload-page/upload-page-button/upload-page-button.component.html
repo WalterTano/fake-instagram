@@ -1,6 +1,11 @@
-<button type="button" class="fi-button" (click)="openModalUpload()">Seleccionar archivo...</button>
+<label class="fi-button">
+  <input class="d-none" type="file" (change)="handleFileInput($event)"/>
+  <div class="fi-button-content">
+    <span>Seleccionar archivo...</span>
+  </div>
+</label>
 
-<!-- 
+<!--
 ------------------------------Clases------------------------------
 
 fi-button = especificado en el scss local. Establece el estilo del boton.

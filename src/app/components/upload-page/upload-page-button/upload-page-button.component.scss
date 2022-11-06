@@ -1,11 +1,21 @@
 .fi-button {
-    
-    background: #5A5A5A; //Permite defininir reglas para el estilo del fondo del elemento.
-    
-    border: 2px solid #5A5A5A; //Permite definir reglas para el estilo del borde del elemento.
-    
-    height: 50px; //Especifica la altura del area de contendio del elemento. (es lo que esta dentro del margin, padding, etc).
-                    //px son por 5p pixeles.
-    
-    color: white; //Especifica el color del contenido.
+  display: block;
+  margin: auto;
+  height: 5rem;
+  width: 80%;
+
+  font-family: 'Roboto';
+  font-size: 1.4rem;
+  text-align: center;
+
+  background: #5A5A5A;
+  color: white;
+}
+
+.fi-button-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
 }

@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalUploadComponent } from '../../modal-upload/modal-upload.component';
 
 @Component({
   selector: 'app-upload-page-button',
@@ -9,13 +7,17 @@ import { ModalUploadComponent } from '../../modal-upload/modal-upload.component'
 })
 export class UploadPageButtonComponent implements OnInit {
 
-  constructor(private modalService: NgbModal) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  openModalUpload(){
-    this.modalService.open(ModalUploadComponent);
-  }
+  handleFileInput($event: Event) {
+    const { files } = $event.currentTarget as HTMLInputElement;
+    const file = files![0];
 
+    if (file) {
+      console.log(file);
+    }
+  }
 }

@@ -30,7 +30,6 @@ import { SearchPageGridComponent } from './components/search-page/search-page-gr
 import { ChatMessageVuewComponent } from './components/Chats/chats-preview/chat-message-vuew/chat-message-vuew.component';
 import { ChatMessageComponent } from './components/Chats/chats-preview/chat-message-vuew/message-grid/chat-message/chat-message.component';
 import { MessageGridComponent } from './components/Chats/chats-preview/chat-message-vuew/message-grid/message-grid.component';
-import { ModalUploadComponent } from './components/modal-upload/modal-upload.component';
 
 @NgModule({
   declarations: [
@@ -57,8 +56,7 @@ import { ModalUploadComponent } from './components/modal-upload/modal-upload.com
     SearchPageGridComponent,
     ChatMessageVuewComponent,
     ChatMessageComponent,
-    MessageGridComponent,
-    ModalUploadComponent
+    MessageGridComponent
   ],
   imports: [
     BrowserModule,
